@@ -1,50 +1,136 @@
-<<<<<<< HEAD
-# AirQuality-Dashboard
-=======
-# Air Quality Analysis Dashboard
+🌍 Dashboard Analisis Kualitas Udara
+Dashboard ini dibuat menggunakan Streamlit untuk menganalisis tren polusi udara berdasarkan data dari beberapa stasiun pemantauan di Beijing.
 
-This project provides an interactive Streamlit dashboard to visualize and analyze air quality data. The dashboard uses data from multiple air quality stations, allowing users to explore key air pollutants, view statistical insights, and filter the data based on specific date ranges and pollutants.
+📌 1. Deskripsi Proyek
+Proyek ini bertujuan untuk menganalisis kualitas udara dan faktor-faktor yang memengaruhinya dengan menggunakan data dari beberapa stasiun pemantauan. Dashboard interaktif memungkinkan pengguna untuk:
 
-## Project Structure
+✅ Melihat tren polusi udara selama periode waktu tertentu.
+✅ Menganalisis hubungan antara polusi udara dan faktor cuaca seperti suhu, tekanan udara, dan curah hujan.
+✅ Membandingkan tingkat polusi udara antarstasiun pemantauan.
 
-The directory structure is as follows:
-submission
-├───dashboard
-| ├───main_data.csv
-| └───dashboard.py
-├───data
-| ├───data_1.csv
-| └───data_2.csv
-├───notebook.ipynb
-├───README.md
-└───requirements.txt
-└───url.txt
+📂 2. Dataset yang Digunakan
+Dataset utama (main_data.csv) berisi data kualitas udara dari beberapa stasiun pemantauan di Beijing.
 
+📊 Struktur Dataset
+Kolom	Deskripsi
+datetime	Waktu pencatatan data (YYYY-MM-DD HH:MM:SS)
+station	Nama stasiun pemantauan (contoh: Guanyuan, Wanshouxigong)
+📊 Polutan	
+PM2.5	Konsentrasi PM2.5 dalam µg/m³
+PM10	Konsentrasi PM10 dalam µg/m³
+NO2	Konsentrasi NO2 dalam µg/m³
+SO2	Konsentrasi SO2 dalam µg/m³
+CO	Konsentrasi CO dalam mg/m³
+O3	Konsentrasi O3 dalam µg/m³
+🌦️ Faktor Cuaca	
+TEMP	Suhu udara dalam derajat Celsius
+PRES	Tekanan udara dalam hPa
+DEWP	Titik embun dalam derajat Celsius
+RAIN	Curah hujan dalam mm
+WSPM	Kecepatan angin dalam m/s
+📌 Lokasi Dataset
+Dataset utama tersimpan dalam folder berikut:
 
-## Overview
+bash
+Copy
+Edit
+dashboard/main_data.csv
+⚙️ 3. Setup Lingkungan Virtual (Virtual Environment)
+Sebelum menjalankan dashboard, buat virtual environment agar dependencies tetap terisolasi.
 
-This project uses air quality data from two stations (Guanyuan and Wanshouxigong) to analyze key pollutants, such as PM2.5, PM10, NO2, SO2, CO, and O3. The data is processed and visualized using various techniques, including statistical analysis and interactive plots. The primary goal of the dashboard is to allow users to interact with the data by selecting different pollutants and viewing the corresponding trends.
+1️⃣ Buat Virtual Environment
 
-### Key Features
+bash
+Copy
+Edit
+python -m venv venv
+2️⃣ Aktifkan Virtual Environment
 
-- **Data Filtering**: Allows users to filter the data by date range and pollutants.
-- **Visualizations**: Includes line charts and boxplots for analyzing trends in air quality and comparing pollutant levels.
-- **Descriptive Statistics**: Displays summary statistics for the pollutants, including mean, median, standard deviation, and more.
-- **Station Comparison**: Compares the air quality data from two stations to understand regional differences in pollution levels.
+Windows
+bash
+Copy
+Edit
+venv\Scripts\activate
+Mac/Linux
+bash
+Copy
+Edit
+source venv/bin/activate
+📦 4. Instalasi Library
+Sebaiknya instal library menggunakan file requirements.txt untuk menghindari masalah dependency.
 
-## Requirements
+1️⃣ Pastikan Virtual Environment Aktif
+Jalankan perintah berikut di terminal:
 
-The project requires the following Python libraries:
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate  # (Mac/Linux) atau venv\Scripts\activate (Windows)
+2️⃣ Install Dependencies dengan requirements.txt
 
-- **Pandas**: For data manipulation and analysis.
-- **Streamlit**: For creating the interactive dashboard.
-- **Matplotlib**: For data visualization.
-- **Seaborn**: For additional advanced visualizations.
-- **Numpy**: For numerical operations.
-- **Plotly**: For interactive plots (if used).
-
-You can install the required dependencies using:
-
-```bash
+bash
+Copy
+Edit
 pip install -r requirements.txt
->>>>>>> df8caeb (First commit)
+Jika kamu belum memiliki requirements.txt, buat file tersebut dan isi dengan:
+
+nginx
+Copy
+Edit
+streamlit
+pandas
+matplotlib
+seaborn
+🚀 5. Menjalankan Dashboard
+Setelah menginstal semua dependencies, jalankan dashboard dengan perintah berikut:
+
+bash
+Copy
+Edit
+streamlit run dashboard/dashboard.py
+Jika ada error, pastikan kamu berada dalam folder proyek yang benar dan sudah mengaktifkan virtual environment.
+
+📜 6. Struktur Folder Proyek
+Pastikan struktur folder seperti ini agar tidak terjadi error:
+
+cpp
+Copy
+Edit
+📂 proyek-analisis-kualitas-udara
+ ├── 📂 dashboard
+ │   ├── main_data.csv
+ │   ├── dashboard.py
+ ├── requirements.txt
+ ├── README.md
+ ├── venv/ (opsional, jika menggunakan virtual environment)
+🛠️ 7. Troubleshooting
+Jika mengalami error saat menjalankan streamlit run dashboard/dashboard.py, coba lakukan langkah berikut:
+
+1️⃣ Pastikan virtual environment sudah aktif.
+2️⃣ Cek apakah semua library sudah terinstal dengan menjalankan:
+
+bash
+Copy
+Edit
+pip list
+3️⃣ Jika ada library yang hilang, instal ulang dengan:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+4️⃣ Pastikan kamu berada di direktori proyek yang benar sebelum menjalankan perintah Streamlit.
+
+📊 8. Pertanyaan Bisnis
+Dashboard ini dibuat untuk menjawab beberapa pertanyaan bisnis terkait kualitas udara:
+
+1️⃣ Bagaimana Tren Polusi Udara Selama Setahun Terakhir?
+
+Analisis tren konsentrasi polutan dalam rentang waktu tertentu untuk melihat pola musiman atau fluktuasi harian.
+2️⃣ Apakah Ada Hubungan Antara Polusi Udara dan Faktor Cuaca?
+
+Visualisasi hubungan antara tingkat polutan dan variabel cuaca seperti suhu, tekanan udara, dan curah hujan.
+3️⃣ Bagaimana Perbandingan Tingkat Polusi antara Dua Stasiun Pemantauan?
+
+Membandingkan konsentrasi polutan di dua stasiun pemantauan yang berbeda untuk mengetahui apakah ada perbedaan signifikan.
