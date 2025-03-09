@@ -103,9 +103,12 @@ Pastikan struktur folder seperti ini agar tidak terjadi error:
 ### **cpp**
 
 ### 📂 submission
-#### ├── 📂 dashboard│   
-#### ├── main_data.csv
+#### ├── 📂 dashboard   
+#### │   ├── main_data.csv
 #### │   ├── dashboard.py
+#### ├── 📂 data
+#### │   ├── PRSA_Data_Guanyuan_20130301-20170228.csv
+#### │   ├── PRSA_Data_Wanshouxigong_20130301-20170228.csv
 #### ├── AirQuality.ipynb
 #### ├── requirements.txt
 #### ├── README.md
